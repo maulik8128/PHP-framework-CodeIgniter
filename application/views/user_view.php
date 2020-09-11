@@ -11,15 +11,15 @@
 
 <?php 
 
-    foreach ($result as $user) {
+    // foreach ($result as $user) {
      
-            echo $user->id;
-            echo $user->username;
-            echo $user->password;
+    //         echo $user->id;
+    //         echo $user->username;
+    //         echo $user->password;
             
-    }
+    // }
 
-    //   echo $result;
+    //    echo $result;
 
 
 
