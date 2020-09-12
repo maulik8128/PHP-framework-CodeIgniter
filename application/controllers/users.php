@@ -53,9 +53,14 @@ class Users extends CI_Controller {
 
         }else{
 
-            $this->user_model->create_user();
+            if($this->user_model->create_user()){
 
+                $this->session->set_flashdata('user_registered','User has been registered');
+                redirect("home/index");
 
+            }
+
+           
         }
 
 

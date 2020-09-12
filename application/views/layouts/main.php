@@ -61,7 +61,7 @@
 
 
 
-            <?php $this->load->view($main_view);?>
+            <?php $this->load->view($main_view);?>    <!--  home_view -->
 
 
 
