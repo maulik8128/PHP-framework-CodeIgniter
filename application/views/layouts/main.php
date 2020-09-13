@@ -23,22 +23,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo  base_url(); ?>">CI App</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">CI App</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="<?php echo  base_url(); ?>">Home<span
+                    <li class="active"><a href="<?php echo base_url(); ?>">Home<span
                                 class="sr-only">(current)</span></a></li>
-                    <li class=""><a href="<?php echo base_url();?>users/register">Register<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="<?php echo base_url(); ?>projects">Projects<span
+                                class="sr-only">(current)</span></a></li>        
+
+                    <li class=""><a href="<?php echo base_url(); ?>users/register">Register<span
+                                class="sr-only">(current)</span></a></li>
 
                 </ul>
-
+                <?php if ($this->session->userdata('logged_in')): ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<?php echo base_url();?>users/logout">Logout</a></li>
-                    
+                    <li><a href="<?php echo base_url(); ?>users/logout">Logout</a></li>
                 </ul>
+                <?php endif;?>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -61,7 +65,8 @@
 
 
 
-            <?php $this->load->view($main_view);?>    <!--  home_view -->
+            <?php $this->load->view($main_view);?>
+            <!--  home_view -->
 
 
 
