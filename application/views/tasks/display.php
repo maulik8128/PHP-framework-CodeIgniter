@@ -1,4 +1,4 @@
-<h1>Task Display View</h1>
+<h1>Task for: <?php echo $project_name; ?>  </h1>
 
 
 

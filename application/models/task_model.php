@@ -10,6 +10,15 @@ class Task_model extends CI_Model {
         return $query->row();
 
     }
+    public function get_all_tasks($user_id) {
+
+        $this->db->where('project_user_id', $user_id);
+        $this->db->join('tasks', 'projects.id=tasks.project_id');
+        $query = $this->db->get('projects');
+//SELECT * FROM `projects` JOIN `tasks` ON `projects`.`id`=`tasks`.`project_id` WHERE `project_user_id` = '1'
+        return $query->result();
+
+    }
 
     public function create_task($data) {
 
@@ -79,16 +88,6 @@ class Task_model extends CI_Model {
         $query = $this->db->update('tasks', $data);
 
         return true;
-
-    }
-
-    public function get_all_tasks($user_id) {
-
-        $this->db->where('project_user_id', $user_id);
-        $this->db->join('tasks', 'projects.id=task.project_id');
-        $query = $this->db->get('projects');
-
-        return $query->result();
 
     }
 

@@ -68,6 +68,33 @@
             <td ><a class=""href="<?php echo base_url(); ?>projects/display/<?php echo $project->id; ?>">View</a></td>
         </tr>
         <?php endforeach;?>
-        <?php endif; ?>
+       
     </tbody>
 </table>
+ <?php endif; ?>
+
+<?php if(isset($projects)): ?>
+<h1>Tasks</h1>
+
+<table class="table table-hover table-bordered table-responsive">
+    <thead>
+        <tr>
+            <th>Task name</th>
+            <th>Task Description</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    
+        <?php foreach ($tasks as $task): ?>
+
+        <tr>
+            <td><?php echo $task->task_name; ?></td>
+            <td><?php echo $task->task_body; ?></td>
+            <td ><a class=""href="<?php echo base_url(); ?>tasks/display/<?php echo $task->id; ?>">View</a></td>
+        </tr>
+        <?php endforeach;?>
+        
+    </tbody>
+</table>
+<?php endif; ?>
