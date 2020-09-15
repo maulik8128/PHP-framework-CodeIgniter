@@ -1,10 +1,18 @@
 .container {
-
-background-color: #FDF1F1;
-
-
-
-
-
-
+	background-color: #fdf1f1;
+	/* background : url(../images/m.jpg); */
+}
+.jumbotron {
+	border: 3px dashed black;
+	background-color: #ffff;
+}
+.table-bordered {
+	border: 3px dashed #C19797;
+	/* background-color: #ffff; */
+}
+.task-description {
+	border-radius: 6px;
+    background-color: #ffff;
+    padding: 20px;
+    box-shadow: 0px 0px 3px 1px;
 }

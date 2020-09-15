@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
     <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js-webshim/minified/polyfiller.js"></script>
 
 </head>
 

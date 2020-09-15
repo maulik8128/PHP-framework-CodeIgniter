@@ -41,37 +41,47 @@
 <div class="jumbotron">
 
 
-<h2 class="text-center">Welcome to the CI App</h2>
+    <h2 class="text-center">Welcome to the CI App</h2>
 
 
 
 </div>
 
 <?php if(isset($projects)): ?>
-<h1>Projects</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3>Projects</h3>
+    </div>
 
-<table class="table table-hover table-bordered table-responsive">
-    <thead>
-        <tr>
-            <th>Project name</th>
-            <th>Project Description</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-    
-        <?php foreach ($projects as $project): ?>
 
-        <tr>
-            <td><?php echo $project->project_name; ?></td>
-            <td><?php echo $project->project_body; ?></td>
-            <td ><a class=""href="<?php echo base_url(); ?>projects/display/<?php echo $project->id; ?>">View</a></td>
-        </tr>
-        <?php endforeach;?>
-       
-    </tbody>
-</table>
- <?php endif; ?>
+
+    <div class="panel-body">
+
+
+    <?php foreach ($projects as $project): ?>
+        <ul class= "list-group">
+            <li class= "list-group-item">
+            <a class="" href="<?php echo base_url(); ?>projects/display/<?php echo $project->id; ?>">
+                <?php echo $project->project_name; ?>
+
+               </a>
+                
+            </li>
+            <?php endforeach;?>
+        </ul>
+
+    </div>
+
+
+</div>
+
+
+
+
+<?php endif; ?>
+
+
+
 
 <?php if(isset($projects)): ?>
 <h1>Tasks</h1>
@@ -81,20 +91,20 @@
         <tr>
             <th>Task name</th>
             <th>Task Description</th>
-            
+            <th>-</th>
         </tr>
     </thead>
     <tbody>
-    
+
         <?php foreach ($tasks as $task): ?>
 
         <tr>
             <td><?php echo $task->task_name; ?></td>
             <td><?php echo $task->task_body; ?></td>
-            <td ><a class=""href="<?php echo base_url(); ?>tasks/display/<?php echo $task->id; ?>">View</a></td>
+            <td><a class="" href="<?php echo base_url(); ?>tasks/display/<?php echo $task->id; ?>">View</a></td>
         </tr>
         <?php endforeach;?>
-        
+
     </tbody>
 </table>
 <?php endif; ?>
