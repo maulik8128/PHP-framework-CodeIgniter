@@ -38,6 +38,16 @@
 
 </p>
 
+<div class="jumbotron">
+
+
+<h2 class="text-center">Welcome to the CI App</h2>
+
+
+
+</div>
+
+<?php if(isset($projects)): ?>
 <h1>Projects</h1>
 
 <table class="table table-hover table-bordered table-responsive">
@@ -49,14 +59,15 @@
         </tr>
     </thead>
     <tbody>
-
+    
         <?php foreach ($projects as $project): ?>
 
         <tr>
             <td><?php echo $project->project_name; ?></td>
             <td><?php echo $project->project_body; ?></td>
-            <td ><a class=""href="<?php echo base_url(); ?>projects">View</a></td>
+            <td ><a class=""href="<?php echo base_url(); ?>projects/display/<?php echo $project->id; ?>">View</a></td>
         </tr>
         <?php endforeach;?>
+        <?php endif; ?>
     </tbody>
 </table>

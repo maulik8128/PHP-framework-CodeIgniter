@@ -26,6 +26,11 @@ class Projects extends CI_Controller {
 
     public function display($project_id) {
 
+        $data['not_completed_tasks'] = $this->project_model->get_project_tasks($project_id , true);
+
+        $data['completed_tasks'] = $this->project_model->get_project_tasks($project_id , false);
+
+
         $data['project_data'] = $this->project_model->get_project($project_id);
         $data['main_view'] = "projects/display";
 
@@ -95,6 +100,7 @@ class Projects extends CI_Controller {
 
     public function delete($project_id) {
 
+        $this->project_model->delete_project_tasks($project_id);
         $this->project_model->delete_project($project_id);
 
             $this->session->set_flashdata('project_deleted', 'Your Project has been deleted');
