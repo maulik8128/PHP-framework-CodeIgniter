@@ -16,8 +16,11 @@ class Projects extends CI_Controller {
     }
 
     public function index() {
+        
+        $user_id = $this->session->userdata('user_id');
 
-        $data['projects'] = $this->project_model->get_projects();
+        $data['projects'] = $this->project_model->get_all_projects($user_id);
+        //$data['projects'] = $this->project_model->get_projects();
 
         $data['main_view'] = "projects/index";
 

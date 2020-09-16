@@ -1,3 +1,24 @@
+<?php 
+
+$home="";
+$project="";
+$register="";
+
+if($this->uri->segment(1) == 'projects'){
+
+    $project="active";
+}elseif($this->uri->segment(2) == 'register'){
+
+    $register = "active";
+}else{
+
+    $home = "active";
+}
+
+
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,12 +52,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="<?php echo base_url(); ?>">Home<span
+                    <li class="<?php echo $home; ?>"><a href="<?php echo base_url(); ?>">Home<span
                                 class="sr-only">(current)</span></a></li>
-                    <li class="active"><a href="<?php echo base_url(); ?>projects">Projects<span
-                                class="sr-only">(current)</span></a></li>        
+                    <li class="<?php echo $project; ?>"><a href="<?php echo base_url(); ?>projects">Projects<span
+                                class="sr-only">(current)</span></a></li>
 
-                    <li class=""><a href="<?php echo base_url(); ?>users/register">Register<span
+                    <li class="<?php echo $register; ?>"><a href="<?php echo base_url(); ?>users/register">Register<span
                                 class="sr-only">(current)</span></a></li>
 
                 </ul>
